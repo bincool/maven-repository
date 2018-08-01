@@ -6,4 +6,78 @@
   <artifactId>commons-utils</artifactId>
   <version>1.0.1</version>
   <description>POM was created from install:install-file</description>
+  
+  <properties>
+    <!-- log4j版本号 -->
+	<log4j.version>1.2.17</log4j.version>
+	<!-- commons-io版本号 -->
+	<commons-io.version>2.4</commons-io.version>
+	<!-- commons-collections版本号 -->
+	<commons-collections.version>3.2.1</commons-collections.version>
+	<!-- jep版本号 -->
+	<jep.version>2.4.2</jep.version>
+  </properties>
+
+  <dependencies>
+	<!-- log4j工具包 -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>${log4j.version}</version>
+	</dependency>
+		
+	<!-- io工具包 -->
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>${commons-io.version}</version>
+	</dependency>
+
+	<!-- collections工具包 -->
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>${commons-collections.version}</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.scijava/jep -->
+	<dependency>
+		<groupId>org.scijava</groupId>
+		<artifactId>jep</artifactId>
+		<version>${jep.version}</version>
+	</dependency>
+  </dependencies>
+
+  <build>
+	<sourceDirectory>src</sourceDirectory>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.6.1</version>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				<!-- <excludes> <exclude>**/io/github/bincool/test/**</exclude> </excludes> -->
+			</configuration>
+		</plugin>
+
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>3.0.2</version>
+			<configuration>
+				<archive>
+					<manifestEntries>
+						<Class-Path>.</Class-Path>
+					</manifestEntries>
+				</archive>
+				<excludes>
+					<exclude>io/github/bincool/test/**</exclude>
+				</excludes>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+
 </project>
