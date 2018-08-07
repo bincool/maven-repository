@@ -5,16 +5,42 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.bincool</groupId>
 	<artifactId>commons-utils</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.2</version>
 	<description>POM was created from install:install-file</description>
 
+	<repositories>
+		<repository>
+			<id>bincool-maven-repository</id>
+			<name>bincool-maven-repository</name>
+			<url>https://raw.githubusercontent.com/bincool/maven-repository/master/</url>
+		</repository>
+	</repositories>
+
 	<properties>
+		<!-- log4j2版本号 -->
+		<log4j2.version>2.6.2</log4j2.version>
+		<!-- commons-io版本号 -->
 		<commons-io.version>2.4</commons-io.version>
+		<!-- commons-collections版本号 -->
 		<commons-collections.version>3.2.1</commons-collections.version>
+		<!-- jep版本号 -->
 		<jep.version>2.4.2</jep.version>
+		<!-- 自定义-commons-encoding版本号 -->
+		<commons-encoding.version>1.0.0</commons-encoding.version>
 	</properties>
 
 	<dependencies>
+		<!-- log4j2工具包 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j2.version}</version>
+		</dependency>
 
 		<!-- io工具包 -->
 		<dependency>
@@ -37,6 +63,12 @@
 			<version>${jep.version}</version>
 		</dependency>
 
+		<!-- 自定义-commons-encoding工具包 -->
+		<dependency>
+			<groupId>io.github.bincool</groupId>
+			<artifactId>commons-encoding</artifactId>
+			<version>${commons-encoding.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -68,7 +100,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 
